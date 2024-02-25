@@ -1,0 +1,39 @@
+grep : to find the word 
+touch : create a directory
+locate : locate a directory
+mkdir foldername : make a directory
+rmdir foldername : remove a directory
+rm filename: to remove the file
+
+w : is used to find out info about the users that are logged in and what they're doing.
+uptime : It is used to find out how long the system is active (running).
+finger : gives details of all the users who are logged in
+man man :  used to display the user manual of any command that we can run on the terminal.
+df : displays information about total space and available space on a file system.
+du :  measures the disk space occupied by files or directories
+whereis : is used to find the location of source/binary file of a command and manuals sections for a specified file in Linux system. example whereis -b gunzip.
+
+tar : which is used to create Archive and extract the Archive files.example tar cvf file.tar first.txt
+‘-c’: Creates a new archive.
+‘-v’: Displays verbose output, showing the progress of the archiving process.
+‘-f’: Specifies the filename of the archive
+example : to Achive : tar cvf file.tar file.txt
+	: to unAchive : tar xvf file.tar
+
+gzip : compresses files
+example : to compress : gzip file.txt
+	: unCompress : gzip -d file.txt.gz
+
+pwd : path of existing folder
+cp filename copyfilename : copy file
+head,tail : for text present in file
+
+top -c : all process list
+pkill : pkill -15 firefox
+bg : This command is used to put the mentioned job in background
+example : 
+jobs
+sleep 500
+ctr z 
+bg %1
+jobs
