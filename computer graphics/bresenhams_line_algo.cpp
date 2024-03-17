@@ -12,7 +12,7 @@ void drawline(int x0, int y0, int x1, int y1)
     x=x0;
     y=y0;
     p=2*dy-dx;
-    while(x<x1)
+    while(x < x1)
     {
         if(p>=0)
         {

@@ -4,6 +4,42 @@
 
 using namespace std;
 
+void midPointAlgo(int x_center, int y_center, int radius){
+	
+	int x = radius;
+	int y = 0;
+	int error = 0;
+	
+	while(x >= y){
+		
+		//four conner
+		putpixel(x_center + x, y_center + y, WHITE);
+		putpixel(x_center - x, y_center + y, WHITE);
+		putpixel(x_center + y, y_center + x, WHITE);
+		putpixel(x_center + y, y_center - x, WHITE);
+		
+		//45 degree points
+		// If the generated point is on the line x = y then
+        // the perimeter points have already been printed
+		if (x != y)
+        {
+            cout << "(" << y + x_center << ", " << x + y_center << ") ";
+            cout << "(" << -y + x_center << ", " << x + y_center << ") ";
+            cout << "(" << y + x_center << ", " << -x + y_center << ") ";
+            cout << "(" << -y + x_center << ", " << -x + y_center << ")\n";
+        }
+		
+		if(error <= 0){
+			y++;
+			error += 2*y + 1;
+		}else{
+			x--;
+			error -= 2*x + 1;
+		}
+	}
+	
+}
+
 void drawcircle(int x0, int y0, int radius){
 	
 	int x = radius;
@@ -19,32 +55,29 @@ void drawcircle(int x0, int y0, int radius){
 		putpixel(x0 - y, y0 - x, YELLOW);
 		putpixel(x0 + y, y0 - x, YELLOW);
 		putpixel(x0 + x, y0 - y, YELLOW);
-		if (error <= 0)
-		{
-		 y =y+1;
-		 error += 2*y + 1;
+		if (error <= 0){
+		 y = y + 1;
+		 error += 2 * y + 1;
 		}
-		if (error > 0)
-		{
-		 x =x-1;
-		 error -= 2*x + 1;
+		if (error > 0){
+		 x = x - 1;
+		 error -= 2 * x + 1;
 		}
  	}
 }
-int main()
-{
-int gdriver=DETECT, gmode, x, y, r;
-initgraph(&gdriver, &gmode, "c:\\turboc3\\bgi");
 
-outtextxy(10, 10, "51 - Hitesh Solanki");
+main(){
+	int gdriver=DETECT, gmode, x, y, r;
+	initgraph(&gdriver, &gmode, "");
 
-cout<<"Enter radius of circle: ";
-cin>>r;
-cout<<"Enter co-ordinates of center(x and y): ";
-cin>>x>>y;
-drawcircle(x, y, r);
+	outtextxy(10, 10, "51 - Hitesh Solanki");
 
-getch();
-return 0;
+	int height = getmaxy();
+	int width = getmaxx();
+
+	drawcircle(width/2, height/2, 100);
+
+	getch();
+	closegraph();
 }
 
