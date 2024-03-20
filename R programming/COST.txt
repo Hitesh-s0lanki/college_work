@@ -1,0 +1,251 @@
+pract 1 Arrays:
+
+vector1 <- c(5,9,3)
+vector2 <- c(10,11,12,13,14,15)
+column.names <- c("COL1","COL2","COL3")
+row.names <- c("ROW1","ROW2","ROW3")
+matrix.names <- c("Matrix1","Matrix2")
+result <- array(c(vector1,vector2),dim = c(3,3,2),dimnames =
+list(row.names,column.names, matrix.names))
+# Print the third row of the second matrix of the array.
+print(result[3,,2])
+print(result[1,3,1])
+# Print the 2nd Matrix.
+print(result[,,2])
+
+Pract 1 b List
+
+# Create a list containing a vector, a matrix and a list.
+list_data <- list(c("Jan","Feb","Mar"), matrix(c(3,9,5,1,-2,8),
+nrow = 2),
+ list("green",12.3))
+# Give names to the elements in the list.
+names(list_data) <- c("1st Quarter", "A_Matrix", "A Inner list")
+# Access the first element of the list.
+print(list_data[1])
+# Access the thrid element. As it is also a list, all its 
+elements will be printed.
+print(list_data[3])
+# Access the list element using the name of the element.
+print(list_data$A_Matrix)
+
+
+1.b.1    Merging List
+
+list1 <- list(1,2,3)
+list2 <- list("Sun","Mon","Tue")
+# Merge the two lists.
+merged.list <- c(list1,list2)
+# Print the merged list.
+print(merged.list)
+
+Pract 1 c Converting List to Vector
+
+list1 <- list(1:5)
+print(list1)
+list2 <-list(10:14)
+print(list2)
+
+# Convert the lists to vectors.
+v1 <- unlist(list1)
+v2 <- unlist(list2)
+print(v1)
+print(v2)
+
+# Now add the vectors
+result <- v1+v2
+print(result)
+
+Pract 2 Matrix
+
+M <- matrix(c(3:14), nrow = 4, byrow = TRUE)
+print(M)
+N <- matrix(c(3:14), nrow = 4, byrow = FALSE)
+print(N)
+rownames = c("row1", "row2", "row3", "row4")
+colnames = c("col1", "col2", "col3")
+P <- matrix(c(3:14), nrow = 4, byrow = TRUE, dimnames =list(rownames, colnames))
+print(P)
+print(P[1,3])
+print(P[4,2])
+print(P[2,])
+print(P[,3])
+
+Pract 2 B Operations on Matrix
+
+matrix1 <- matrix(c(3, 9, -1, 4), nrow = 2)
+print(matrix1)
+matrix2 <- matrix(c(5, 2, 0, 9,), nrow = 2)
+print(matrix2)
+result <- matrix1 + matrix2
+cat("Result of addition","\n")
+print(result)
+result <- matrix1 - matrix2
+cat("Result of subtraction","\n")
+print(result)
+result <- matrix1 * matrix2
+cat("Result of multiplication","\n")
+print(result)
+result <- matrix1 / matrix2
+cat("Result of division","\n")
+print(result)
+
+I <- solve(matrix1)
+print(I)
+
+T <- t(matrix1)
+print(T)
+
+Pract 3 Mean, median, Mode
+
+x <- c(12,7,3,4.2,18,2,54,-21,8,-5)
+result.mean <- mean(x)
+print(result.mean)
+median.result <- median(x)
+print(median.result)
+
+# mode
+getmode <- function(v) {
+ uniqv <- unique(v)
+ uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+v <- c(2,1,2,3,1,2,3,4,1,5,5,3,2,3)
+result <- getmode(v)
+print(result)
+
+#characters
+charv <- c("o","it","the","it","it")
+result <- getmode(charv)
+print(result)
+
+#Quartile
+faithful
+duration = faithful$eruptions # the eruption durations
+quantile(duration)
+IQR(duration) 
+
+#histogram
+v <- c(9,13,21,8,36,22,12,41,31,33,19)
+hist(v,xlab = "Weight",col = "yellow",border = "blue")
+hist(v,xlab = "Weight",col = "green",border = "red", xlim =
+c(0,40), ylim = c(0,5), breaks = 5)
+
+Pract 4 CSV File
+
+Step 1 create CSV file in notepad
+
+id,name,salary,start_date,dept
+1,Rick,623.3,2012-01-01,IT
+2,Dan,515.2,2013-09-23,Operations
+3,Michelle,611,2014-11-15,IT
+4,Ryan,729,2014-05-11,HR
+5,Gary,843.25,2015-03-27,Finance
+6,Nina,578,2013-05-21,IT
+7,Simon,632.8,2013-07-30,Operations
+8,Guru,722.5,2014-06-17,Finance
+
+Step 2 Reading file in R
+
+data <- read.csv("D:/Jaymala/input.csv")
+print(data)
+print(is.data.frame(data))
+print(ncol(data))
+print(nrow(data))
+sal <- max(data$salary)
+print(sal)
+sal <- max(data$salary)
+retval <- subset(data, salary == max(salary))
+print(retval)
+retval <- subset( data, dept == "IT")
+print(retval)
+info <- subset(data, salary > 600 & dept == "IT")
+print(info)
+retval <- subset(data, as.Date(start_date) > as.Date("2014-01-01"))
+print(retval)
+write.csv(retval,"output.csv")
+newdata <- read.csv("output.csv")
+print(newdata)
+
+Pract 5 Standard deviation and Variance
+
+duration = faithful$eruptions 
+sd(duration)
+var(duration)
+waiting = faithful$waiting 
+cov(duration, waiting)
+
+Pract 6  Chi - Square Test
+
+library("MASS")
+print(Cars93)
+car.data <- data.frame(Cars93$AirBags, Cars93$Type)
+car.data = table(Cars93$AirBags, Cars93$Type)
+print(car.data)
+# Perform the Chi-Square test.
+print(chisq.test(car.data))
+
+Pract 7 Linear Regression
+
+x <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131)
+y <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48)
+# Apply the lm() function.
+relation <- lm(y~x)
+print(relation)
+print(summary(relation))
+a <- data.frame(x = 170)
+result <- predict(relation,a)
+print(result)
+plot(y,x,col = "blue",main = "Height & Weight Regression",
+abline(lm(x~y)),cex = 1.3,pch = 16,xlab = "Weight in Kg",ylab =
+"Height in cm")
+
+Pract 8 Non-Linear Least Square
+
+xval <- c(1.6,2.1,2,2.23,3.71,3.25,3.4,3.86,1.19)
+yval <- c(5.19,7.43,6.94,8.11,18.75,14.88,16.06,19.12,3.21)
+plot(xval,yval)
+model <- nls(yval ~ b1*xval^2+b2,start = list(b1 =1,b2 = 3))
+new.data <- data.frame(xval =seq(min(xval),max(xval),len = 100))
+lines(new.data$xval,predict(model,newdata = new.data))
+print(sum(resid(model)^2))
+print(confint(model))
+
+Pract 9 Distribution
+
+x <- seq(0,50,by = 1)
+
+# Create the binomial distribution.
+y <- dbinom(x,50,0.5)
+plot(x,y)
+
+# Probability of getting 26 or less heads from a 51 tosses of a 
+coin.
+x <- pbinom(26,51,0.5)
+print(x)
+
+# Cumulative Distribution
+x <- qbinom(0.25,51,1/2)
+print(x)
+
+# random distribution
+x <- rbinom(8,150,.4)
+print(x)
+
+Pract 10 Normal Distribution
+
+#Probability distribution
+x <- seq(-10, 10, by = .1) 
+y <- dnorm(x, mean = 2.5, sd = 0.5)
+plot(x,y)
+
+# Cumulative Distribution
+y1 <- pnorm(x, mean = 2.5, sd = 2)
+plot(x,y1)
+
+# Cumulative value = Probability value
+z <- qnorm(x, mean = 2, sd = 1)
+plot(x,z)
+
+# random distribution
+y <- rnorm(50)
+hist(y, main = "Normal Distribution")
