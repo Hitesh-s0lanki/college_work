@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Practical 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com" ></script>
+        <style>
+            html,
+            body {
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="h-full w-full bg-slate flex justify-center items-center">
+            <form class="p-10 rounded-md shadow-lg border w-[600px] space-y-2" method="post" action="Login">
+                <h1 class="text-xl font-semibold text-center w-full">Welcome to Jungle</h1>
+                <div>
+                  
+                <label class=" text-lg font-semibold">Username</label>
+                <input name="username" class="border rounded-sm p-2 text-sm w-full" />
+                </div>
+                <div>
+                <label class=" text-lg font-semibold">Password</label>
+                <input name="password" class="border rounded-sm p-2 text-sm w-full" /></div>
+                
+                <div class="py-5" />
+                
+                <button class=" text-md border-none bg-green-400 py-2 px-4 rounded-md">
+                    Submit
+                </button>
+             </form> 
+        </div>
+    </body>
+</html>
