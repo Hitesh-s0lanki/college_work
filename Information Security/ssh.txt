@@ -1,0 +1,17 @@
+ip domain-name ccnasecurity.com
+username admin privilege 15 secret password
+line vty 0 4
+login local
+en
+
+crypto key zeroize rsa
+crypto key generate rsa
+
+ex
+
+show ip ssh
+conf t
+
+ip ssh time-out 90
+ip ssh authentication-retries 2
+ip ssh version 2

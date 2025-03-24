@@ -1,0 +1,69 @@
+PR7 CLI
+
+
+(R1)
+license boot module c1900 technology-package securityk9
+yes
+(CLICK ENTER)
+exit
+copy running-config startup-config
+(CLICK ENTER)
+reload
+(CLICK ENTER)
+en
+show version
+(CLICK ENTER TILL COMPLETED)
+
+config t
+ntp server 192.168.1.3
+ntp update-calendar
+service timestamp log datetime msec
+logging host 192.168.1.3
+exit
+show clock
+
+config t
+exit
+mkdir ipsdir-1
+(CLICK ENTER) 
+config t
+ip ips config location flash:ipsdir-1
+ip ips name iosips
+ip ips notify log
+ip ips signature-category
+category all
+retired true
+exit
+category ios_ips basic
+retired false
+exit
+exit
+(CLICK ENTER)
+
+int G0/0
+ip ips iosips out
+exit
+ip ips signature-definition
+signature 2004 0
+status
+retired false
+enabled true
+exit
+engine
+event-action produce-alert
+event-action deny-packet-inline
+exit
+exit
+exit
+(CLICK ENTER)
+
+PC-2 will ping PC-3, but PC-3 will not be able to ping PC-2
+
+
+(PC2)
+ping 192.168.3.3
+
+(PC3)
+ping 192.168.1.2
+
+(CHECK SYSLOG IN PC1)

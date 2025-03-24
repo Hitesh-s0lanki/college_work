@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hites\\OneDrive\\Desktop\\college_work\\C#\\DeletegateExample\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04367EF2-1C2F-468B-803E-116B004B9965}|DeletegateExample\\DeletegateExample.csproj|c:\\users\\hites\\onedrive\\desktop\\college_work\\c#\\deletegateexample\\deletegateexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04367EF2-1C2F-468B-803E-116B004B9965}|DeletegateExample\\DeletegateExample.csproj|solutionrelative:deletegateexample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hites\\OneDrive\\Desktop\\college_work\\C#\\DeletegateExample\\DeletegateExample\\Program.cs",
+              "RelativeDocumentMoniker": "DeletegateExample\\Program.cs",
+              "ToolTip": "C:\\Users\\hites\\OneDrive\\Desktop\\college_work\\C#\\DeletegateExample\\DeletegateExample\\Program.cs",
+              "RelativeToolTip": "DeletegateExample\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBkAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T13:53:48.672Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

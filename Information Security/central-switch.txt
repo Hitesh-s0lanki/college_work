@@ -1,0 +1,58 @@
+PR8 CLI
+
+(Central)
+spanning-tree vlan 1 root primary
+
+(SW-1)
+spanning-tree vlan 1
+spanning-tree vlan 1 root secondary
+interface range f0/23 - 24
+spanning-tree guard root
+
+(SW-2)
+interface range f0/23 - 24
+spanning-tree guard root
+
+
+(SW-A)
+en
+config t
+interface range f0/1 - 4
+spanning-tree portfast
+exit
+interface range f0/1 - 22
+switchport mode access
+switchport port-security
+switchport port-security maximum 2
+switchport port-security violation shutdown
+switchport port-security mac-address stick
+exit
+interface range f0/5 - 22
+shutdown
+
+(SW-B)
+en
+config t
+interface range f0/1 - 4
+spanning-tree portfast
+exit
+interface range f0/1 - 22
+switchport mode access
+switchport port-security
+switchport port-security maximum 2
+switchport port-security violation shutdown
+switchport port-security mac-address sticky
+exit
+interface range f0/5 - 22
+shutdown
+
+
+(SW-A)
+exit
+exit
+show port-security int f0/1
+
+(SW-B)
+exit
+exit
+show port-security int f0/1

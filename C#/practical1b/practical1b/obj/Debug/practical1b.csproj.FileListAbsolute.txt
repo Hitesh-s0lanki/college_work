@@ -1,0 +1,7 @@
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\bin\Debug\practical1b.exe.config
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\bin\Debug\practical1b.exe
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\bin\Debug\practical1b.pdb
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\obj\Debug\practical1b.csproj.AssemblyReference.cache
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\obj\Debug\practical1b.csproj.CoreCompileInputs.cache
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\obj\Debug\practical1b.exe
+C:\Users\hites\OneDrive\Desktop\college_work\C#\practical1b\practical1b\obj\Debug\practical1b.pdb

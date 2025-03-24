@@ -1,0 +1,59 @@
+PR6 CLI
+
+(R3)
+en 
+config t
+ip domain-name ccnasecurity.com
+username SSHadmin privilege 15 secret ciscosshpa55
+line vty 0 4
+login local
+transport input ssh
+exit
+crypto key generate rsa
+1024
+ip ssh time-out 90
+ip ssh authentication-retries 2
+ip ssh version 2
+
+license boot module c1900 technology-package securityk9
+yes
+(CLICK ENTER)
+exit
+copy running-config startup-config
+(CLICK ENTER)
+reload
+(CLICK ENTER)
+en
+show version
+(CLICK ENTER TILL COMPLETED)
+
+config t
+zone security IN-ZONE
+exit
+zone security OUT-ZONE
+exit
+access-list 101 permit ip 192.168.3.0 0.0.0.255 any
+class-map type inspect match-all IN-NET-CLASS-MAP
+match access-group 101
+exit
+policy-map type inspect IN-2-OUT-PMAP
+class type inspect IN-NET-CLASS-MAP
+inspect
+exit
+exit
+zone-pair security IN-2-OUT-ZPAIR source IN-ZONE destination OUT-ZONE
+service-policy type inspect IN-2-OUT-PMAP
+exit
+int G0/0
+zone-member security IN-ZONE
+exit
+int s0/1/0
+zone-member security OUT-ZONE
+exit
+
+
+(SERVER TO PC will not work)
+ping 192.168.3.3
+
+(PC TO SERVER will work)
+ping 192.168.1.3

@@ -1,0 +1,7 @@
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\bin\Debug\DeletegateExample.exe.config
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\bin\Debug\DeletegateExample.exe
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\bin\Debug\DeletegateExample.pdb
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\obj\Debug\DeletegateExample.csproj.AssemblyReference.cache
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\obj\Debug\DeletegateExample.csproj.CoreCompileInputs.cache
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\obj\Debug\DeletegateExample.exe
+C:\Users\hites\OneDrive\Desktop\college_work\C#\DeletegateExample\DeletegateExample\obj\Debug\DeletegateExample.pdb
